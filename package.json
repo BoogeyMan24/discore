@@ -1,0 +1,36 @@
+{
+	"name": "discore",
+	"version": "1.0.0",
+	"description": "Simple, flexible, and most importantly versatile all-in-one discord bot framework.",
+	"main": "src/index",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BoogeyMan24/Discore.git"
+	},
+	"keywords": [
+		"discord",
+		"discord.js",
+		"discore"
+	],
+	"author": "BoogeyMan",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/BoogeyMan24/Discore/issues"
+	},
+	"homepage": "https://github.com/BoogeyMan24/Discore#readme",
+	"packageManager": "pnpm@10.19.0",
+	"devDependencies": {
+		"@eslint/js": "^9.38.0",
+		"@types/node": "^24.9.1",
+		"@types/ws": "^8.18.1",
+		"eslint": "^9.38.0",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"discord.js": "^14.24.0"
+	}
+}
