@@ -1,2 +1,8 @@
+# ENVIRONMENT
+.env
+
+# PACKAGES
 /node_modules/
+
+# BUILD
 /dist/

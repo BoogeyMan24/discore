@@ -1,0 +1,8 @@
+# PACKAGES
+/node_modules/
+
+# SOURCE
+/src/
+
+# TYPESCRIPT
+tsconfig

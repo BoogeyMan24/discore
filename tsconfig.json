@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist",
+		"outDir": "dist",
 		"declaration": true,
 		"strict": true,
 		"esModuleInterop": true,
@@ -10,6 +10,9 @@
 		"sourceMap": true,
 		"removeComments": true,
 		"noImplicitAny": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
 	},
 	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
 }
