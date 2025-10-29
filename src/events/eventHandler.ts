@@ -17,10 +17,10 @@ export class EventHandler {
 		this.discore = discore;
 		this.eventsDir = eventsDir;
 
-		this.loadEventsFromDirector();
+		this.loadEventsFromDirectory();
 	}
 
-	private loadEventsFromDirector() {
+	private loadEventsFromDirectory() {
 		
 	}
 }
