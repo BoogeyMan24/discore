@@ -1,21 +1,32 @@
 import { Client, ClientOptions, IntentsBitField, PresenceStatusData } from "discord.js";
 import { Options } from "./types";
+import { CommandHandler } from "./commands/commandHandler";
+import { EventHandler } from "./events/eventHandler";
 
 export class DiscoreClient {
-	private client!: Client;
+	private _client!: Client;
+	private eventHandler?: EventHandler;
+	private commandHandler?: CommandHandler;
+	private prefix?: "string";
+	private testGuild?: string[];
+	private adminIds?: string[];
 
 	constructor(options: Options) {
 		this.init(options);
 	}
 
-	init(options: Options) {
+	private init(options: Options) {
 		if (!options.client) {
 			throw new Error("Client must be defined.");
 		}
 
-		this.client = options.client;
+		this._client = options.client;
 
-		console.log("test");
+		console.log(__dirname);
+		this.eventHandler = 
+			options.eventsDir ? new EventHandler(this, options.eventsDir) : undefined;
+		this.commandHandler = 
+			options.commandsDir ? new CommandHandler(this, options.commandsDir) : undefined;
 	}
 
 	public static getDefaultClientOptions(options?: { intents?: ClientOptions["intents"], status?: PresenceStatusData }): ClientOptions {
@@ -25,5 +36,9 @@ export class DiscoreClient {
 				status: options?.status ?? "online"
 			}
 		}
+	}
+
+	get client(): Client {
+		return this.client;
 	}
 }
