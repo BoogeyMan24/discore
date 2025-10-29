@@ -16,17 +16,16 @@ export class DiscoreClient {
 	}
 
 	private init(options: Options) {
-		if (!options.client) {
+		if (!options.client)
 			throw new Error("Client must be defined.");
-		}
 
 		this._client = options.client;
 
-		console.log(__dirname);
+
 		this.eventHandler = 
-			options.eventsDir ? new EventHandler(this, options.eventsDir) : undefined;
+			options.eventsDir ? new EventHandler(this, this.client, options.eventsDir) : undefined;
 		this.commandHandler = 
-			options.commandsDir ? new CommandHandler(this, options.commandsDir) : undefined;
+			options.commandsDir ? new CommandHandler(this, this.client, options.commandsDir) : undefined;
 	}
 
 	public static getDefaultClientOptions(options?: { intents?: ClientOptions["intents"], status?: PresenceStatusData }): ClientOptions {
@@ -39,6 +38,6 @@ export class DiscoreClient {
 	}
 
 	get client(): Client {
-		return this.client;
+		return this._client;
 	}
 }

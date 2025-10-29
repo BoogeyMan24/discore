@@ -11,8 +11,9 @@
 		"removeComments": true,
 		"noImplicitAny": true,
 		"module": "esnext",
+		"target": "esnext",
 		"moduleResolution": "bundler",
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "**/node_modules/**"]
 }
